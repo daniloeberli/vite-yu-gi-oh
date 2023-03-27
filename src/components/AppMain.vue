@@ -26,7 +26,6 @@ main{
 }
 
 .container{
-    height: 600px;
     background-color: white;
 }
 

@@ -20,7 +20,7 @@ import CharacterCard from './CharacterCard.vue';
     <div class="container">
        <div class="row g-3">
             <div class="col-12 col-sm-3" v-for="character in store.characters">
-                <CharacterCard :img="character.image" :name="character.name" :type="character.type"  />
+                <CharacterCard :img="character.card_images.image_url" :name="character.name" :type="character.type"  />
             </div>
        </div>
     </div>
