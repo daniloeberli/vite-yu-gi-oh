@@ -22,6 +22,10 @@ export default {
                 this.store.characters = response.data.data;
                 this.store.charactersFound = response.data.data.length;
             })
+        axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+            .then((response) => {
+                this.store.archetype = response.data
+            })
     }
 }
 

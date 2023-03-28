@@ -20,4 +20,12 @@
 
 
 <style lang="scss" scoped>
+
+article{
+    min-height: 600px;
+    background-color: #d48f38;
+    h3{
+        color: white;
+    }
+}
 </style>
