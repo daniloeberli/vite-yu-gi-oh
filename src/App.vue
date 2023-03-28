@@ -26,6 +26,11 @@ export default {
             .then((response) => {
                 this.store.archetype = response.data;
             })
+    },
+    methods:{
+        myF(){
+            console.log('select con emit')
+        }
     }
 }
 
@@ -34,5 +39,5 @@ export default {
 
 <template>
     <AppHeader></AppHeader>
-    <AppMain></AppMain>
+    <AppMain @prova="myF"></AppMain>
 </template>
