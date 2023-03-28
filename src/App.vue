@@ -24,7 +24,7 @@ export default {
             })
         axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
             .then((response) => {
-                this.store.archetype = response.data
+                this.store.archetype = response.data;
             })
     }
 }
