@@ -18,8 +18,8 @@ import CharacterCard from './CharacterCard.vue';
 
 <template>
     <div class="container">
-       <div class="row g-3">
-            <div class="col-12 col-md-3 col-sm-4" v-for="character in store.characters.slice(0,100)">
+       <div class="row row-cols-sm-1 row-cols-lg-5 g-3">
+            <div class="col" v-for="character in store.characters.slice(0,100)">
                 <CharacterCard :img="character.card_images[0].image_url" :name="character.name.toUpperCase()" :type="character.archetype"  />
             </div>
        </div>
