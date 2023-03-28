@@ -17,19 +17,33 @@ export default {
     },
     created() {
 
-        axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
-            .then((response) => {
-                this.store.characters = response.data.data;
-                this.store.charactersFound = response.data.data.length;
-            })
         axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
             .then((response) => {
                 this.store.archetype = response.data;
             })
+            .catch((error) => {
+                    console.log(error);
+                    this.store.archetype = [];
+                })
+
+
     },
-    methods:{
-        myF(){
-            console.log('select con emit')
+    methods: {
+        searchType() {
+            axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php', {
+                params: {
+                    archetype: store.searchType
+                }
+            })
+                .then((response) => {
+                    this.store.characters = response.data.data;
+                    this.store.charactersFound = response.data.data.length;
+                })
+                .catch((error) => {
+                    console.log(error);
+                    this.store.characters = [];
+                    this.store.charactersFound = 0;
+                })
         }
     }
 }
@@ -39,5 +53,5 @@ export default {
 
 <template>
     <AppHeader></AppHeader>
-    <AppMain @prova="myF"></AppMain>
+    <AppMain @prova="searchType"></AppMain>
 </template>

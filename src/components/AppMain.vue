@@ -23,8 +23,8 @@ export default {
     <main class="p-5">
         <div class="mb-3 col-12 col-sm-auto">
             <label for="search-status" class="form-label d-none">Select Status</label>
-            <select @change="$emit('prova')" style="width: auto" class="form-select" id="search-status">
-                <option selected>Select Status</option>
+            <select v-model="store.searchType" @change="$emit('prova')" style="width: auto" class="form-select" id="search-status">
+                <option selected value="">Select Status</option>
                 <option v-for="item in store.archetype">{{ item.archetype_name }}</option>
             </select>
         </div>
